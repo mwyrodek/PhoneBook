@@ -30,7 +30,7 @@
         {
             var employee = new Employee("Emma", "Mazuni", 123, Departments.Koszalin, "00-4567");
             var employeeNameAndDepartment = employee.Name + " " + employee.Department;
-            Assert.That(employee.PrintBasicInfo, Is.EqualTo(employeeNameAndDepartment));
+            Assert.That(employee.PrintBasicInfo(), Is.EqualTo(employeeNameAndDepartment));
         }
 
         [Test]
@@ -38,7 +38,7 @@
         {
             var employee = new Employee("Emma", "Mazuni", 123, Departments.Koszalin, "00-4567");
             var employeeFullData = employee.Name + " " + employee.SurName + " " + employee.BadgeID.ToString() + " " + employee.Department + " " + employee.InternalPhone;
-            Assert.That(employee.PrintFullInfo, Is.EqualTo(employeeFullData));
+            Assert.That(employee.PrintFullInfo(), Is.EqualTo(employeeFullData));
         }
     }
 }
