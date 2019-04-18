@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace PhoneBook
 {
-    class Program
+    public enum Departments
     {
-        static void Main(string[] args)
-        {
-        }
+        Koszalin,
+        Krakow,
+        Szczecin,
+        Wroclaw,
+        ZielonaGora        
     }
 }
