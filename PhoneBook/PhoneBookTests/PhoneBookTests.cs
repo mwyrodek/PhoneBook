@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using PhoneBook;
-
-namespace PhoneBookTests
+﻿namespace PhoneBookTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using NUnit.Framework;
+    using PhoneBook;
+
     [TestFixture]
     public class PhoneBookTests
     {
         [Test]
-        public void Employee_Check_Name()
+        public void Employee_Check_All_Info()
         {
             var employee = new Employee("Emma", "Mazuni", 123, Departments.Koszalin, "00-4567");
             Assert.Multiple(() =>
@@ -22,17 +22,17 @@ namespace PhoneBookTests
                 Assert.That(employee.BadgeID, Is.EqualTo(123));
                 Assert.That(employee.Department, Is.EqualTo(Departments.Koszalin));
                 Assert.That(employee.InternalPhone, Is.EqualTo("00-4567"));
-            });
-           
+            });           
         }
 
         [Test]
         public void Employee_Check_Basic_Print()
         {
             var employee = new Employee("Emma", "Mazuni", 123, Departments.Koszalin, "00-4567");
-            var employeeNameAndDepartment = employee.Name+" "+ employee.Department;
+            var employeeNameAndDepartment = employee.Name + " " + employee.Department;
             Assert.That(employee.PrintBasicInfo, Is.EqualTo(employeeNameAndDepartment));
         }
+
         [Test]
         public void Employee_Check_Full_Print()
         {

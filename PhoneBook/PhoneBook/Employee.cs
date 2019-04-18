@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PhoneBook
+﻿namespace PhoneBook
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     public class Employee
     {
-        public string Name { get; }
-        public string SurName { get; }
-        public int BadgeID { get; }
-        public Departments Department { get; }
-        public string InternalPhone { get; }
-
         public Employee(string name, string surName, int badgeId, Departments department, string internalPhone)
         {
             this.Name = name;
@@ -21,19 +15,29 @@ namespace PhoneBook
             this.BadgeID = badgeId;
             this.Department = department;
             this.InternalPhone = internalPhone;
-            PrintBasicInfo();
-            PrintFullInfo();
+            this.PrintBasicInfo();
+            this.PrintFullInfo();
         }
+
+        public string Name { get; }
+
+        public string SurName { get; }
+
+        public int BadgeID { get; }
+
+        public Departments Department { get; }
+
+        public string InternalPhone { get; }
 
         public string PrintFullInfo()
         {
-            string fullInfoAboutEmployee = Name + " " + SurName + " " + BadgeID.ToString() + " " + Department + " " + InternalPhone;
+            string fullInfoAboutEmployee = this.Name + " " + this.SurName + " " + this.BadgeID.ToString() + " " + this.Department + " " + this.InternalPhone;
             return fullInfoAboutEmployee;
         }
 
         public string PrintBasicInfo()
         {
-            string fullInfoAboutEmployee = Name + " " + Department;
+            string fullInfoAboutEmployee = this.Name + " " + this.Department;
             return fullInfoAboutEmployee;
         }
     }
